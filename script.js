@@ -139,7 +139,7 @@ function minimax(boardState, depth, isMaximizing) {
                 boardState[i] = X;
                 let score = minimax(boardState, depth + 1, false);
                 boardState[i] = EMPTY;
-                bestScore = Math.max(bestScore, score);
+                bestScore = Math.min(bestScore, score);
             }
         }
         return bestScore;
@@ -150,7 +150,7 @@ function minimax(boardState, depth, isMaximizing) {
                 boardState[i] = O;
                 let score = minimax(boardState, depth + 1, true);
                 boardState[i] = EMPTY;
-                bestScore = Math.min(bestScore, score);
+                bestScore = Math.max(bestScore, score);
             }
         }
         return bestScore;
